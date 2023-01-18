@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Home from "./Components/home";
-import Store from "./Components/store";
+import Store from "./Components/product";
 import About from "./Components/about";
 import Navbar from "./Components/Navbar";
 import {ShoppingCartProvider} from './context/ShoppingCartContext'

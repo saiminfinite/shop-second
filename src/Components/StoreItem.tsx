@@ -13,7 +13,7 @@ function StoreItem({ id, name, price, imgURL }: StoreItemProps) {
   const {
     getItemQuantity,
     increaseCartQuantity,
-     decreaseCartQuantity,
+    decreaseCartQuantity,
     removeFromCart
         }= useShoppingCart()
   const quantity = getItemQuantity(id);
@@ -23,7 +23,7 @@ function StoreItem({ id, name, price, imgURL }: StoreItemProps) {
       <Card.Img
         variant="top"
         src={imgURL}
-        height="300px"
+        height="200px"
         style={{ objectFit: "cover" }}
       />
       <Card.Body className="d-flex flex-column">
@@ -36,12 +36,12 @@ function StoreItem({ id, name, price, imgURL }: StoreItemProps) {
             <Button className="w-100" onClick={() =>increaseCartQuantity(id)}>+ Add To Cart</Button>
           ) : <div className="d-flex align-items-center flex-column" style={{gap:".5rem"}}>
             <div className="d-flex align-items-center justify-content-center" style={{gap:".5rem"}}> 
-            <Button>-</Button>
+            <Button onClick={()=>decreaseCartQuantity(id)}>-</Button>
             <div>
-            <span className="fs-2">{quantity}</span>
+            <span className="fs-3">{quantity}</span>
             in Cart
             </div>
-            <Button onClick={()=>decreaseCartQuantity(id)}>+</Button>
+            <Button  onClick={() =>increaseCartQuantity(id)}>+</Button>
             </div>
             <Button variant="danger" size="sm" onClick={()=>removeFromCart(id)}>Remove</Button>
            </div>}
